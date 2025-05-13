@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.external {
+  max-width: 100vw;
+  height: 100vh;
+  /* background-color: aquamarine; */
+  display: flex;
+  align-items: center;
+  background-color: #2d3250;
+}
+.container {
+  width: 60%;
+  height: 50vh;
+  margin: 0 auto;
+  background-color: #424769;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "input-data change-btn"
+    "panel-data panel-data";
+  align-items: center;
+  gap: 1em;
+  box-shadow: 15px 10px 3em;
+}
+.container .input-array {
+  grid-area: input-data;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2em;
+}
+.container .input-array label {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container .input-array input {
+  width: 70%;
+  padding: 0.7em;
+  outline-style: none;
+  transition: all 0.5s;
+}
+input:focus {
+  border-color: salmon;
+  box-shadow: 0 0 3em rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+.container .menu-change {
+  display: flex;
+  justify-content: center;
+}
+.container .menu-change .chang-btn {
+  padding: 0.8em 1em;
+  margin: 0em 0.5em;
+  border-radius: 10px 0 10px 0;
+  background-color: salmon;
+  font-weight: bold;
+  grid-area: change-btn;
+  box-shadow: 4px 3px black;
+  transition: all 1s;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.container .menu-change .chang-btn:hover {
+  box-shadow: 1px 0px black;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.container .panel-array {
+  /* width: 100%; */
+  grid-area: panel-data;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.container .panel-array p {
+  background-color: beige;
+  display: inline;
+  padding: 10px;
+  border-radius: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "input-data"
+      "change-btn"
+      "panel-data";
+  }
+  .container .menu-change {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .container .menu-change .chang-btn {
+    margin: 1em 0.6em;
+  }
+}
